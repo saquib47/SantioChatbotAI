@@ -1,0 +1,56 @@
+{
+    "en": {
+        "hotlines": [
+            {
+                "name": "National Suicide Prevention Lifeline",
+                "phone": "1-800-273-8255",
+                "description": "Free, confidential support available 24/7"
+            },
+            {
+                "name": "Crisis Text Line",
+                "phone": "Text HOME to 741741",
+                "description": "Free, 24/7 support via text message"
+            }
+        ],
+        "self_help": [
+            {
+                "title": "Mindfulness Meditation Guide",
+                "url": "https://www.mindful.org/meditation/mindfulness-getting-started/",
+                "description": "Beginner's guide to mindfulness meditation"
+            },
+            {
+                "title": "Anxiety and Depression Association of America",
+                "url": "https://adaa.org/",
+                "description": "Resources for anxiety, depression, and related disorders"
+            }
+        ],
+        "local_resources": "Check with your local health department or community center for mental health services in your area."
+    },
+    "es": {
+        "hotlines": [
+            {
+                "name": "Línea Nacional de Prevención del Suicidio",
+                "phone": "1-888-628-9454",
+                "description": "Apoyo gratuito y confidencial disponible 24/7"
+            },
+            {
+                "name": "Línea de Texto de Crisis",
+                "phone": "Envía AYUDA al 741741",
+                "description": "Apoyo gratuito 24/7 por mensaje de texto"
+            }
+        ],
+        "self_help": [
+            {
+                "title": "Guía de Meditación Mindfulness",
+                "url": "https://www.mindful.org/meditation/mindfulness-getting-started/",
+                "description": "Guía para principiantes sobre meditación mindfulness"
+            },
+            {
+                "title": "Asociación de Ansiedad y Depresión de América",
+                "url": "https://adaa.org/",
+                "description": "Recursos para ansiedad, depresión y trastornos relacionados"
+            }
+        ],
+        "local_resources": "Consulte con su departamento de salud local o centro comunitario para servicios de salud mental en su área."
+    }
+}

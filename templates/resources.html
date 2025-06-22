@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Resources</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="resources-container">
+        <header>
+            <h1>Mental Health Resources</h1>
+            <p>Help and support available for you</p>
+        </header>
+        
+        <section class="resource-section">
+            <h2>Crisis Hotlines</h2>
+            <div id="hotlines" class="resource-list">
+                <!-- Hotlines will be loaded here -->
+            </div>
+        </section>
+        
+        <section class="resource-section">
+            <h2>Self-Help Resources</h2>
+            <div id="self-help" class="resource-list">
+                <!-- Self-help resources will be loaded here -->
+            </div>
+        </section>
+        
+        <section class="resource-section">
+            <h2>Local Resources</h2>
+            <p id="local-resources"></p>
+        </section>
+        
+        <button id="back-btn" class="btn-primary">Back to Santio</button>
+    </div>
+
+    <script>
+        const language = "{{ language }}";
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load resources for the selected language
+            fetch(`/api/resources?language=${language}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Populate hotlines
+                    const hotlinesContainer = document.getElementById('hotlines');
+                    data.hotlines.forEach(hotline => {
+                        const hotlineDiv = document.createElement('div');
+                        hotlineDiv.className = 'resource-card';
+                        hotlineDiv.innerHTML = `
+                            <h3>${hotline.name}</h3>
+                            <p class="phone">${hotline.phone}</p>
+                            <p>${hotline.description}</p>
+                        `;
+                        hotlinesContainer.appendChild(hotlineDiv);
+                    });
+                    
+                    // Populate self-help resources
+                    const selfHelpContainer = document.getElementById('self-help');
+                    data.self_help.forEach(resource => {
+                        const resourceDiv = document.createElement('div');
+                        resourceDiv.className = 'resource-card';
+                        resourceDiv.innerHTML = `
+                            <h3><a href="${resource.url}" target="_blank">${resource.title}</a></h3>
+                            <p>${resource.description}</p>
+                        `;
+                        selfHelpContainer.appendChild(resourceDiv);
+                    });
+                    
+                    // Populate local resources
+                    document.getElementById('local-resources').textContent = data.local_resources;
+                });
+                
+            // Back button
+            document.getElementById('back-btn').addEventListener('click', function() {
+                window.location.href = `/?lang=${language}`;
+            });
+        });
+    </script>
+</body>
+</html>

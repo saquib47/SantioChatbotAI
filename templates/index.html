@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santio - Your Mental Health Companion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="welcome-container">
+        <header>
+            <img src="{{ url_for('static', filename='images/santio-logo.png') }}" alt="Santio Logo" class="logo">
+            <h1>Welcome to Santio</h1>
+            <p>Your compassionate AI companion for mental health support</p>
+        </header>
+        
+        <div class="language-selector">
+            <label for="language">Select your preferred language:</label>
+            <select id="language">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="zh">中文</option>
+                <option value="hi">हिन्दी</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+        
+        <div class="button-container">
+            <button id="start-chat" class="btn-primary">Start Chatting with Santio</button>
+            <button id="resources" class="btn-secondary">Mental Health Resources</button>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <h3>24/7 Support</h3>
+                <p>Santio is always available when you need someone to talk to.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Multilingual</h3>
+                <p>Communicate in your preferred language without barriers.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Confidential</h3>
+                <p>Your conversations are private and secure.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
